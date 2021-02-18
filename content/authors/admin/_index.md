@@ -30,7 +30,7 @@ social:
   icon: twitter
   icon_pack: fab
   label: Follow me on Twitter
-  link: https://twitter.com/ThomasGrundy8
+  link: https://twitter.com/tom_grundy95
 - icon: github
   icon_pack: fab
   link: https://github.com/grundy95
@@ -47,8 +47,8 @@ superuser: true
 title: Tom Grundy
 ---
 
-I am a 3rd year PhD student at the STOR-i Doctoral Training Centre at Lancaster Univeristy. My PhD is in partnership with Royal Mail and focuses on changepoint detection in time series data. My research aims to develop effective statistical methodology that has an impact in the real world.
+I am a 3rd year PhD student at the STOR-i Doctoral Training Centre at Lancaster University. My PhD is in partnership with Royal Mail and focuses on changepoint detection in time series data. My research aims to develop effective statistical methodology that has an impact in the real world.
 
-Beyond solving the worlds statistical problems, I'm a keen fell-runner, horse rider and football enthusist. In the ideal world every weekend would be spent camping in the Lakes!
+Beyond solving the worlds statistical problems, I'm a keen fell-runner, horse rider and football enthusiast. In the ideal world, every weekend would be spent camping in the Lakes!
 
 [//]: # "{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}CV{{< /staticref >}}."

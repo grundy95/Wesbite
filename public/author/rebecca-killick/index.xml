@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rebecca Killick | Tom Grundy</title>
+    <link>/author/rebecca-killick/</link>
+      <atom:link href="/author/rebecca-killick/index.xml" rel="self" type="application/rss+xml" />
+    <description>Rebecca Killick</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>media/avatar.jpeg</url>
+      <title>Rebecca Killick</title>
+      <link>/author/rebecca-killick/</link>
+    </image>
+    
+    <item>
+      <title>High-dimensional changepoint detection via a geometrically inspired mapping</title>
+      <link>/publication/geomcp/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/geomcp/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

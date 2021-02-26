@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>time series | Tom Grundy</title>
+    <link>/tag/time-series/</link>
+      <atom:link href="/tag/time-series/index.xml" rel="self" type="application/rss+xml" />
+    <description>time series</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>media/avatar.jpeg</url>
+      <title>time series</title>
+      <link>/tag/time-series/</link>
+    </image>
+    
+    <item>
+      <title>Introduction to Changepoint Analysis</title>
+      <link>/post/introcpts/</link>
+      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/post/introcpts/</guid>
+      <description>
+&lt;script src=&#34;/post/introcpts/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Having spent 3 years of my life studying changepoints in my PhD, I would hope I’d be able to succinctly overview the topic … lets see how it goes. First things first, the word changepoint can be spelt in many different ways (changepoint, change-point or change point) and if your looking in the economic literature they can also be called structural breaks - don’t be confused these are all describing the exact same thing!&lt;/p&gt;
+&lt;p&gt;Changepoint analysis is exactly what it says on the tin; it involves looking for points of change in ordered data. The most common type of ordered data is time series data where data is collected over time. The aim of changepoint analysis is then to identify points in time where the structure of the data has changed. Okay, so what does a changepoint look like? The plot below shows the most common type of change; a mean change (also known as a level shift).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/introcpts/index_files/figure-html/simpleCpt-1.png&#34; width=&#34;70%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Looking at this plot, you would be able to tell me where the changepoint is. So what’s the point in decades worth of research into a subject area that we can do instantly just by looking at the data? Well, what if I now gave your 10000 time series to look at and asked you to tell me where all the changepoints were? If you were rich enough you could hire 10000 people and get the answers instantly or you could utilize changepoint analysis. I’m going to assume we want to do the latter.&lt;/p&gt;
+&lt;p&gt;So what we want from our changepoint analysis is to replicate what the human eye can do instantly - spot the change. How does your eye know where the change is though? Well if we break it down you would probaly see the first 500 time points are centered around 0 and the last 500 time points are centered around 2. So what we are noticing is the mean of the time points has changed. This idea forms the basis of the first changepoint method we will look at, the &lt;strong&gt;CUmulative SUM (CUSUM)&lt;/strong&gt;.&lt;/p&gt;
+&lt;div id=&#34;cusum&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;CUSUM&lt;/h1&gt;
+&lt;p&gt;The basic idea behind the CUSUM method is to split the data at every possible changepoint location (so here every timepoint) and to compare the mean of the data before the split and after the split. The point where the difference between the means is the greatest is the most likely position of the changepoint. We would then check if the difference between the means was large enough to deem a change has occured.&lt;/p&gt;
+&lt;p&gt;In order to define the CUSUM statistic formally we first need some basic notation. Let &lt;span class=&#34;math inline&#34;&gt;\(X_t\)&lt;/span&gt; be our data for &lt;span class=&#34;math inline&#34;&gt;\(t=1,\ldots,n\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; is the length of the data. Let &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; be the point at which we split the data. The CUSUM test statistic, &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;, at point &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; is defined as
+&lt;span class=&#34;math display&#34;&gt;\[ 
+T(k)=\sqrt{\frac{k(n-k)}{n}}\left(\frac{1}{k}\sum\limits_{t=1}^kX_t-\frac{1}{n-k}\sum\limits_{t=k+1}^nX_t\right)\;.\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Notice, the CUSUM statistic is actually a weighted difference of the means. This is to account for the size of the segment before and after &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;. If we have less data, our estimate of the mean will be poorer and this is accounted for in the weighting.&lt;/p&gt;
+&lt;p&gt;So how does this CUSUM statistic behave with the data shown above? The plot below shows the raw data and the CUSUM statistic at each potential time point.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/introcpts/index_files/figure-html/cusumSimpleCpt-1.png&#34; width=&#34;70%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can see the CUSUM statistic is minimized at the changepoint location. If the data had a mean decrease the CUSUM statistic would be maximised at the changepoint location. Hence, to find the most likely changepoint position we take the value of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; that corresponds to the maximimum of the absoulte value fo the CUSUM statistics.&lt;/p&gt;
+&lt;p&gt;So, we have found the most likely changepoint position but how do we know that a changepoint actually occured at that location? There may be no changepoints in the data but the CUSUM statisitc will always return a most likley changepoint position. To determine if a changepoint is detected we need some threshold that the CUSUM statistic must exceed. There is alot of litreture on choosing this threshold but in its simplest form the aim of the threshold is to control the false positive rate, &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. By this I mean we want a threhsold such that, if there were no changeoints in the data, the probability of the maximum CUSUM staistic exceeding the threshold would be &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. I common choice of false positive rate is &lt;span class=&#34;math inline&#34;&gt;\(\alpha=0.05\)&lt;/span&gt;. Here is not the place to delve to deeply into choosing an appropriate threshold.&lt;/p&gt;
+&lt;p&gt;Up till now, we haven’t placed any assumptions on our data. Many of you will have noticed the data in the plots is Normally distributed but it doesn’t need to be for the CUSUM to be used. However, if we did know the data generating process then we could use an alternative method, namley the likelihood ratio test.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;likelihood-ratio-test&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Likelihood Ratio Test&lt;/h1&gt;
+&lt;p&gt;I’m going to assume people are familar with likelihoods. If not you can basically treat the liklihood as measuring “how likely is it that the data came from this distirbution”. In the likelihood ratio test (LRT) we are comparing the liklihood of the whole data to the likelihood that there is a changepoint present.&lt;/p&gt;
+&lt;p&gt;Let’s take the example of Normal data with known unit variance. We want to see if there is a change in mean in the data. The unknown parameter here is the mean so this needs to be estimated and we choose the estimate of the mean that maximises the liklihood. So we want the maximum likelihood estiamtor of the mean (this turns out to be just the traditional mean we are used to for Normal data).&lt;/p&gt;
+&lt;p&gt;Okay so how would we go about calculating the LRT statistic for our Normal data with unit varaince. Well, first we need the likelihood of the whole data,
+&lt;span class=&#34;math display&#34;&gt;\[
+L(\mu)=\prod\limits_{t=1}^{n}\frac{1}{\sqrt{2\pi}}\exp{-\frac{(x_t-\mu)^2}{2}}
+\]&lt;/span&gt;
+We want to maximise this with respect to &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;. Here we would get &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}=\bar{x}\)&lt;/span&gt;. Now we need the likelihood of the data assuming there is a change at some location.
+&lt;span class=&#34;math display&#34;&gt;\[
+L(\mu_1, \mu_2, k)=\prod\limits_{t=1}^k\frac{1}{\sqrt{2\pi}}\exp{-\frac{(x_t-\mu_1)^2}{2}}\prod\limits_{t=k+1}^n\frac{1}{\sqrt{2\pi}}\exp{-\frac{(x_t-\mu_2)^2}{2}}
+\]&lt;/span&gt;
+Here we want to maximise this over &lt;span class=&#34;math inline&#34;&gt;\(\mu_1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\mu_2\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;. This can be done similarly to the CUSUM procedure. We let &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; take every position in the time series sequesntially, caluclate the mean before and after, and see which value of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; maximises the likelihood.&lt;/p&gt;
+&lt;p&gt;Now we have our likelihhod for the whole data assuming no change, &lt;span class=&#34;math inline&#34;&gt;\(L_1(\hat{\mu})\)&lt;/span&gt;, and the likelihood of the data assuming a change, &lt;span class=&#34;math inline&#34;&gt;\(L_2(\hat{\mu}_1, \hat{\mu}_2, \hat{k})\)&lt;/span&gt;. We can caluclate the LRT statistic as
+&lt;span class=&#34;math display&#34;&gt;\[
+\text{LRT}=-2\log\left(\frac{L_1(\hat{\mu})}{L_2(\hat{\mu}_1, \hat{\mu}_2, \hat{k}}
+\]&lt;/span&gt;
+Similarly, to the CUSUM staistic we then need to compare this to some threshold to see if a changepoint has occured. If it exceeds this threshold then we deem the changepoint to have occured at &lt;span class=&#34;math inline&#34;&gt;\(\hat{k}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;section&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;plots&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Plots&lt;/h1&gt;
+&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/post/introcpts/index_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;70%&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: A fancy pie chart.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tom Grundy</title>
+    <link>/author/tom-grundy/</link>
+      <atom:link href="/author/tom-grundy/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tom Grundy</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language>
+    <image>
+      <url>/author/tom-grundy/avatar_hud6b58fa0296d651b035d8fb586890a16_187867_270x270_fill_q75_lanczos_center.jpeg</url>
+      <title>Tom Grundy</title>
+      <link>/author/tom-grundy/</link>
+    </image>
+    
+  </channel>
+</rss>

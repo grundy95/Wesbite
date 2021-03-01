@@ -71,7 +71,7 @@ ggplot(mapping=aes(x=1:1000, y=X))+
 
 Looking at this plot, you can instantly see the location of the changepoint and the number of changes. So what's the point in decades worth of research into a subject area that we can do instantly just by looking at the data? Well firstly, this is the most obvious type of changepoint, in more complicated examples it is not so easy to simply spot the changepoints by eye. Take a look at Figure \@ref(fig:cptCov), this a multivariate time series but can you spot the changepoint? I would be mightily impressed if you could! (p.s. the change is at 400 and is a change in covariance). Secondly, back to the simple change in mean scenario, what if I now gave you 10000 time series to look at and asked you to tell me where all the changepoints were? If you were rich enough you could hire 10000 people and get the answers instantly or you could utilize changepoint analysis. I'm going to assume we want to do the latter.
 
-```{r cptCov, fig.cap='A multivarite time series witha  change in covariance. Can you spot the changepoint by eye?'}
+```{r cptCov, fig.cap='A multivarite time series with a  change in covariance. Can you spot the changepoint by eye?'}
 set.seed(3)
 Sigma1 = matrix(c(1,0.2,0.7,0.2,1,0.4,0.7,0.4,1), nrow=3)
 Sigma2 = matrix(c(1,0.7,0.2,0.7,1,0.2,0.2,0.2,1), nrow=3)
@@ -252,8 +252,8 @@ So whats have we covered so far?
 
 Hopefully, from this post you now understand the basics of changepoint analysis and could use the CUSUM statistic to identify changes in mean. There are many extensions in the changepoint literature which I haven't had time to discuss here including:
 
-* Detecting different types of changes (i.e. variance, trends, distributional).
-* Alternative methods to the CUSUM (i.e. Likelihood Ratio Test).
+* Detecting different types of changes (e.g. variance, trends, distributional).
+* Alternative methods to the CUSUM (e.g. Likelihood Ratio Test).
 * Identifying multiple changepoints.
 * Detecting changepoints in multivariate data.
 * Detecting changepoint sequentially, in an online fashion.

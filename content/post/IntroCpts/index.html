@@ -40,9 +40,9 @@ Figure 2: A single mean change in standard Guassian data
 </div>
 <p>Looking at this plot, you can instantly see the location of the changepoint and the number of changes. So what’s the point in decades worth of research into a subject area that we can do instantly just by looking at the data? Well firstly, this is the most obvious type of changepoint, in more complicated examples it is not so easy to simply spot the changepoints by eye. Take a look at Figure <a href="#fig:cptCov">3</a>, this a multivariate time series but can you spot the changepoint? I would be mightily impressed if you could! (p.s. the change is at 400 and is a change in covariance). Secondly, back to the simple change in mean scenario, what if I now gave you 10000 time series to look at and asked you to tell me where all the changepoints were? If you were rich enough you could hire 10000 people and get the answers instantly or you could utilize changepoint analysis. I’m going to assume we want to do the latter.</p>
 <div class="figure" style="text-align: center"><span id="fig:cptCov"></span>
-<img src="{{< blogdown/postref >}}index_files/figure-html/cptCov-1.png" alt="A multivarite time series witha  change in covariance. Can you spot the changepoint by eye?" width="90%" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/cptCov-1.png" alt="A multivarite time series with a  change in covariance. Can you spot the changepoint by eye?" width="90%" />
 <p class="caption">
-Figure 3: A multivarite time series witha change in covariance. Can you spot the changepoint by eye?
+Figure 3: A multivarite time series with a change in covariance. Can you spot the changepoint by eye?
 </p>
 </div>
 <p>For the single change in mean scenario, we want our changepoint analysis to replicate what the human eye can do instantly - spot the change. How does your eye know where the change is though? If we break it down your eye is drawn to the point where the data jumps, but how does your eye know there is a jump? Well it can see the data points are first centered around 0 and then they are centered around 2. This, in essence, is noticing the mean of the time points has changed. This idea forms the basis of the most common changepoint method, the <strong>CUmulative SUM (CUSUM)</strong> method.</p>
@@ -129,8 +129,8 @@ Figure 8: CUSUM statistic for data with none and a single changepoint with a sim
 </ul>
 <p>Hopefully, from this post you now understand the basics of changepoint analysis and could use the CUSUM statistic to identify changes in mean. There are many extensions in the changepoint literature which I haven’t had time to discuss here including:</p>
 <ul>
-<li>Detecting different types of changes (i.e. variance, trends, distributional).</li>
-<li>Alternative methods to the CUSUM (i.e. Likelihood Ratio Test).</li>
+<li>Detecting different types of changes (e.g. variance, trends, distributional).</li>
+<li>Alternative methods to the CUSUM (e.g. Likelihood Ratio Test).</li>
 <li>Identifying multiple changepoints.</li>
 <li>Detecting changepoints in multivariate data.</li>
 <li>Detecting changepoint sequentially, in an online fashion.</li>

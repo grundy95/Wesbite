@@ -32,6 +32,8 @@ content:
     tag: Personal Projects
   - name: R Packages
     tag: R packages
+  - name: Programming Skills
+    tag: programming skills
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

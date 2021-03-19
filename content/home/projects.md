@@ -1,5 +1,5 @@
 ---
-active: false
+active: true
 # An instance of the Portfolio widget.
 # Documentation: https://wowchemy.com/docs/page-builder/
 widget: portfolio
@@ -28,8 +28,8 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Deep Learning
-    tag: Deep Learning
+  - name: Personal Projects
+    tag: Personal Projects
   - name: Other
     tag: Demo
 

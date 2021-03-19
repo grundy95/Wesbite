@@ -11,7 +11,7 @@ image:
 pdf: pdf
 summary: An example of using the in-built project page.
 tags:
-- Personal Project
+- Personal Projects
 title: Matching NFL and Premier League Teams
 url_code: "https://github.com/grundy95/nfl-prem-matchup"
 url_pdf: ""

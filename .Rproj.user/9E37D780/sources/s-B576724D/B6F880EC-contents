@@ -1,0 +1,11 @@
+---
+date: "2016-04-27T00:00:00Z"
+external_link: https://github.com/grundy95/nfl-prem-matchup
+image:
+  caption: 
+  focal_point: Smart
+summary: Ever wondered which NFL team to support based upon your favourite Premier League team? This project analyses Premier League and NFL teams and aims to match/group them based upon their respective strengths..
+tags:
+- Personal Project
+title: Grouping NFL and Premier League Teams
+---

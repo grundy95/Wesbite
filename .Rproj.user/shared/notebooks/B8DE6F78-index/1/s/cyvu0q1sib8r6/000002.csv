@@ -1,0 +1,5 @@
+"0","set.seed(1)"
+"0","X = c(rnorm(500),rnorm(500,2))"
+"0","ggplot(mapping=aes(x=1:1000, y=X))+"
+"0","	geom_line()+"
+"0","	labs(x='Time', y='Value')"

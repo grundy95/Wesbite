@@ -1,9 +1,9 @@
 {
-    "path" : "~/Dropbox/Projects/Website/content/post/IntroCpts",
-    "sortOrder" : [
+    "path": "~/Dropbox/Projects/Website/content/event",
+    "sortOrder": [
         {
-            "ascending" : true,
-            "columnIndex" : 2
+            "columnIndex": 2,
+            "ascending": true
         }
     ]
 }

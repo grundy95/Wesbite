@@ -30,8 +30,8 @@ content:
     tag: '*'
   - name: Personal Projects
     tag: Personal Projects
-  - name: Other
-    tag: Demo
+  - name: R Packages
+    tag: R packages
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

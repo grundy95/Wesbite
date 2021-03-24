@@ -19,6 +19,8 @@ library(knitr)
 library(kableExtra)
 ```
 
+Ever wondered what NFL team you should support? This post uses statistics and machine learning to determine similar NFL and Premier League teams. Find your favourite Premier League team and see what similar NFL teams there are.
+
 American football is becoming increasingly popular in the UK. My interest in the NFL started in the early 2010's, eagerly anticipating Superbowl Sunday every February (and then regretting staying up so late at school the next day!). One of the things that makes sport so special is having a team to support. Yes we can all appreciate incredible sport and watching two neutral teams battle it out in major finals but this takes a whole new level when one of the teams is 'your' team. 
 
 So how do people choose 'their' team? For most people this isn't much of a choice; you support your local team or the team your family support (we won't mention those people who pick the 'best' team and then make up some pretend connection as to why they support them). However, as the NFL is based in the US and most peoples family don't support an NFL team, how should we go about choosing a team. I decided there must be a clever way to pick a team that is statically similar to the team I already support and hence this post was born!

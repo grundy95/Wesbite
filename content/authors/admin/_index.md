@@ -51,4 +51,4 @@ I am a 3rd year PhD student at the STOR-i Doctoral Training Centre at Lancaster 
 
 Beyond solving the worlds statistical problems, I'm a keen fell-runner, horse rider and football enthusiast. In the ideal world, every weekend would be spent camping in the Lakes!
 
-[//]: # "{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}CV{{< /staticref >}}."
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/CV.pdf" "newtab" >}}CV{{< /staticref >}}.

@@ -14,8 +14,11 @@ education:
 email: "t.grundy1@lancaster.ac.uk"
 highlight_name: false
 interests:
-- Time series data
-- Statistical Methodology
+- Time series analysis
+- Changepoint Detection
+- Forecasting
+- Stochastic Processes
+- High-dimensional Statistics
 - R Programming
 organizations:
 - name: STOR-i Centre for Doctoral Training

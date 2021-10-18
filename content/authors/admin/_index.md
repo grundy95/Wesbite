@@ -21,9 +21,9 @@ interests:
 - High-dimensional Statistics
 - R Programming
 organizations:
-- name: STOR-i Centre for Doctoral Training
-  url: https://www.lancaster.ac.uk/stor-i/
-role: PhD Student
+- name: AO.com
+  url: https://www.ao.com
+role: Data Scientist
 social:
 - icon: envelope
   icon_pack: fas
@@ -50,7 +50,7 @@ superuser: true
 title: Tom Grundy
 ---
 
-I am a 3rd year PhD student at the STOR-i Doctoral Training Centre at Lancaster University. My PhD is in partnership with Royal Mail and focuses on changepoint detection in time series data. My research aims to develop effective statistical methodology that has an impact in the real world.
+I am a data scientist at AO.com working on varying retail projects within the company. I recently completed my PhD at the STOR-i Doctoral Training Centre at Lancaster University. My PhD was in partnership with Royal Mail and focused on changepoint detection in time series data. My research aims to develop effective statistical methodology that has an impact in the real world.
 
 Beyond solving the worlds statistical problems, I'm a keen fell-runner, horse rider and football enthusiast. In the ideal world, every weekend would be spent camping in the Lakes!
 

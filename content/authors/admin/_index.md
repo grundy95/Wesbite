@@ -11,9 +11,10 @@ education:
   - course: BSc in Mathematics & Statistics
     institution: Lancaster University
     year: 2017
-email: "t.grundy1@lancaster.ac.uk"
+email: "tthomas.grundy95@gmail.com"
 highlight_name: false
 interests:
+- Pricing
 - Time series analysis
 - Changepoint Detection
 - Forecasting
@@ -21,8 +22,8 @@ interests:
 - High-dimensional Statistics
 - R Programming
 organizations:
-- name: AO.com
-  url: https://www.ao.com
+- name: Peak
+  url: https://peak.ai/
 role: Data Scientist
 social:
 - icon: envelope
@@ -30,10 +31,6 @@ social:
   link: /#contact
 - display:
     header: true
-  icon: twitter
-  icon_pack: fab
-  label: Follow me on Twitter
-  link: https://twitter.com/tom_grundy95
 - icon: github
   icon_pack: fab
   link: https://github.com/grundy95
@@ -50,8 +47,7 @@ superuser: true
 title: Tom Grundy
 ---
 
-I am a data scientist at AO.com working on varying retail projects within the company. I recently completed my PhD at the STOR-i Doctoral Training Centre at Lancaster University. My PhD was in partnership with Royal Mail and focused on changepoint detection in time series data. My research aims to develop effective statistical methodology that has an impact in the real world.
+I am a data scientist at Peak where I predominately work with manufacturing companies on pricing projects to deliver end-to-end ML pipelines that improve decision making & deliver measurable value. In 2021, I completed my PhD at the STOR-i Doctoral Training Centre at Lancaster University. My PhD was in partnership with Royal Mail and focused on changepoint detection in time series data. Through my work I aim to build effective statistical & ML methodology that is utilised and has an impact in the real world.
 
-Beyond solving the worlds statistical problems, I'm a keen fell-runner, horse rider and football enthusiast. In the ideal world, every weekend would be spent camping in the Lakes!
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/CV.pdf" "newtab" >}}CV{{< /staticref >}}.
